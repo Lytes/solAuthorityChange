@@ -6,6 +6,18 @@ Live at https://sol-authority-change-reto7sdmi-kurolytes-projects.vercel.app/
 
 ---
 
+## 🔒 Why This Tool?
+
+From my experience with **white hat wallet recoveries**, threat actors don’t just brick wallets—they often **take control of token accounts**, especially in **airdrop situations**. \
+
+Most users are unaware of this risk and **reach out too late** when hackers have already taken control of the token account \
+
+This tool helps **balance the scales** by allowing users with **compromised wallets** to **securely transfer token account authority** **before** attackers can take control.
+
+## 🔒 Why This Tool?
+
+This tool helps **balance the scales** by allowing users with **compromised wallets** to **securely transfer token account authority** **before** attackers can take control. 🚀
+
 ## 🚀 Features
 
 - Connect **Compromised & Safe Wallets**
