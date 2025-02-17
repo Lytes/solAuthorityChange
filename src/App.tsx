@@ -1,5 +1,4 @@
-import { NextPage, FC } from "next";
-import { JSX, useState } from "react";
+import { FC, JSX, useState } from "react";
 import {
   useWallet,
   // useAnchorWallet,
@@ -30,7 +29,7 @@ import {
   SolflareWalletAdapter,
 } from "@solana/wallet-adapter-wallets";
 
-const App: NextPage = () => {
+const App: FC = () => {
   const endpoint =
     process.env.NEXT_PUBLIC_CLUSTER_URL || clusterApiUrl("devnet");
   const wallets = [new PhantomWalletAdapter(), new SolflareWalletAdapter()];
@@ -63,7 +62,7 @@ const App: NextPage = () => {
 };
 
 // Component for compromised wallet
-const CompromisedWallet: NextPage<{
+const CompromisedWallet: FC<{
   children: (compromisedWallet: WalletContextState) => JSX.Element;
 }> = ({ children }) => {
   const compromisedWallet = useWallet();
@@ -82,7 +81,7 @@ const CompromisedWallet: NextPage<{
 };
 
 // Component for safe wallet
-const SafeWallet: NextPage<{
+const SafeWallet: FC<{
   children: (safeWallet: WalletContextState) => JSX.Element;
 }> = ({ children }) => {
   const safeWallet = useWallet();
@@ -238,8 +237,11 @@ const TransactionExecutor: FC<TransactionExecutorProps> = (props) => {
         `✅ Transaction successful! View on Solana Explorer:\nhttps://explorer.solana.com/tx/${txid}?cluster=devnet`
       );
     } catch (error) {
-      console.error("❌ Error sending transaction:", error);
-      alert(`❌ Transaction failed: ${error.message}`);
+      if (error instanceof Error) {
+        alert(`❌ Transaction failed: ${error.message}`);
+      } else {
+        alert(`❌ Transaction failed: Unknown error`);
+      }
     }
   };
 
