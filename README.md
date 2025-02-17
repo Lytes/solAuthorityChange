@@ -2,6 +2,8 @@
 
 A **Next.js** application for securely **transferring Solana token account ownership** from a **compromised wallet** to a **safe wallet**.
 
+Live at https://sol-authority-change-reto7sdmi-kurolytes-projects.vercel.app/
+
 ---
 
 ## 🚀 Features
