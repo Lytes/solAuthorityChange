@@ -1,50 +1,54 @@
-# React + TypeScript + Vite
+### 🏆 Solana Token Authority Manager
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A **Next.js** application for securely **transferring Solana token account ownership** from a **compromised wallet** to a **safe wallet**.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## Expanding the ESLint configuration
+- Connect **Compromised & Safe Wallets**
+- **Transfer token authority** from compromised wallet to safe wallet
+- **Automatic token account creation** if missing (optional)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+---
 
-- Configure the top-level `parserOptions` property like this:
+## 📦 Installation
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```sh
+git clone https://github.com/Lytes/solAuthorityChange.git
+cd solAuthorityChange
+npm install
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+---
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## ▶️ Usage
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+1. **Start the app**
+   ```sh
+   npm run dev
+   ```
+2. Connect both **Compromised** and **Safe** wallets
+3. Enter the **Mint Address** of the token
+4. Click **"Change Authority"** to transfer ownership
+5. View transaction on **Solana Explorer**
+
+---
+
+## 🔧 Configuration
+
+Set **RPC Endpoint** in `.env`. See `.env.example` for example
+
+```sh
+CLUSTER_URL="https://api.devnet.solana.com"
 ```
+
+Web app defaults to devnet if not CLUSTER URL is not set
+
+---
+
+## 📜 License
+
+MIT
+
+---
